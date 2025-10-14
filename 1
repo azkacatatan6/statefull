@@ -1,0 +1,46 @@
+import 'package:flutter/material.dart';
+
+class Halsatu extends StatefulWidget {
+  const Halsatu({super.key});
+
+  @override
+  State<Halsatu> createState() => _HalsatuState();
+}
+
+class _HalsatuState extends State<Halsatu> {
+
+int angkasekarang = 0;
+
+void nambahangkasekarang(){
+
+setState(() {
+  angkasekarang++;
+});
+
+}
+
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            
+            Text('Angka'),
+
+            Text(angkasekarang.toString(), style: TextStyle(fontSize: 30),),
+
+            ElevatedButton(onPressed: () {
+              nambahangkasekarang();
+            }, child: Text('Tambah'))
+
+          ],
+        ),
+      ),
+
+
+    );
+  }
+}
